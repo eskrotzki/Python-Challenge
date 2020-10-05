@@ -38,7 +38,23 @@ print(f"Total Votes: {count}")
 
 print("              ")
 
-for i in range(len(unique)):
+for x in range(len(unique)):
     print(f"{unique[x]} : {vote_percent[x]}% ({vote_count[x]})")
 
 print(f"Winner: {winner}")
+
+
+with open("PyPoll.txt", "w") as text:
+    
+    text.write(f"Election Results")
+
+    text.write("              ")
+
+    text.write(f"Total Votes: {count}")
+
+    text.write("              ")
+
+    for x in range(len(unique)):
+        text.write(f"{unique[x]} : {vote_percent[x]}% ({vote_count[x]})")
+
+    text.write(f"Winner: {winner}")

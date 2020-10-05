@@ -13,7 +13,7 @@ revenue = []
 month_change=[]
 revenue_change=[]
 
-with open(budget_csv, newline = '') as csvfile:
+with open(budget_csv, newline = "") as csvfile:
     csvreader= csv.reader(csvfile, delimiter = ",")
     print(csvreader)
     next(csvreader)
@@ -23,8 +23,8 @@ with open(budget_csv, newline = '') as csvfile:
         months.append(row[0])
         revenue.append(row[0])
     print(len(months)
-    revenue_int = map(int, revenue)
-    total_rev = sum(revenue_int)
+    rev = map(int, revenue)
+    total_rev = sum(rev)
 
 
     i=0
@@ -57,5 +57,15 @@ with open(budget_csv, newline = '') as csvfile:
     print(f"Greatest increase in profits: {month_inc} {profit_inc}")
     print(f"Greatest increase in profits: {month_dec} {profit_dec}")
 
+with open("PyBank.txt", "w") as text:
+    
+    text.write("Financial Analysis")
 
+    text.write("                   ")
+
+    text.write(f"Total Months: {months}")
+    text.write(f"Total: {revenue}")
+    text.write(f"Average Change {month_change}")
+    text.write(f"Greatest increase in profits: {month_inc} {profit_inc}")
+    text.write(f"Greatest increase in profits: {month_dec} {profit_dec}")
     
